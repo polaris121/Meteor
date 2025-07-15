@@ -17,9 +17,12 @@ COPY . .
 # This will create a Node.js application in the 'bundle' directory
 RUN meteor build --directory . --allow-superuser
 
+# Install server dependencies
+WORKDIR /usr/src/app/bundle/programs/server
+RUN npm install
+
 # Set the entrypoint to run the application
 WORKDIR /usr/src/app/bundle
-RUN npm install
 
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
