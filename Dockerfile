@@ -7,6 +7,9 @@ WORKDIR /usr/src/app
 # Install Meteor
 RUN npm install -g meteor --unsafe-perm
 
+# Add Meteor to the path
+ENV PATH /root/.meteor:$PATH
+
 # Copy the application source code to the container
 COPY . .
 
