@@ -15,7 +15,7 @@ COPY . .
 
 # Build the application
 # This will create a Node.js application in the 'bundle' directory
-RUN meteor build --directory .
+RUN meteor build --directory . --allow-superuser
 
 # Set the entrypoint to run the application
 WORKDIR /usr/src/app/bundle
