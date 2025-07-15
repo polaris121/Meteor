@@ -1,11 +1,11 @@
 # Use an official Node.js runtime as a parent image
-FROM node:14
+FROM node:20
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
 # Install Meteor
-RUN npm install -g meteor
+RUN npm install -g meteor --unsafe-perm
 
 # Copy the application source code to the container
 COPY . .
